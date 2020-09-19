@@ -1,0 +1,19 @@
+{
+    "Aargau" : ["AG"],
+    "Argovie" : ["AG"],
+    "Argovia" : ["AG"],
+    "Aarau" : ["AG"],
+
+    "Appenzell" : ["AI", "AR"],
+    "Appenzello" : ["AI", "AR"],
+
+    "Basel" : ["BS", "BL"],
+    "Bale" : ["BS", "BL"],
+    "Bâle" : ["BS", "BL"],
+    "Basilea" : ["BS", "BL"],
+
+    "Bern" : ["BE"],
+    "Berne" : ["BE"],
+    "Berna" : ["BE"],
+    "Thun" : ["BE"]
+}
