@@ -2,9 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for
 from string import Template
 import pandas as pd
 from twitter import process_data
-from map import update_map
+from map_world import update_map
+from map_switzerland import update_map_swiss
 
-WORLD_ID = 'XOmfL'
+WORLD_ID = 'X3Ps8'
+WORLD_ID_SWISS = 'Tmt8o'
 
 app = Flask(__name__)
 
@@ -18,7 +20,7 @@ def world():
 
 @app.route('/switzerland')
 def switzerland():
-    return render_template('switzerland.html', MAP_ID=WORLD_ID)
+    return render_template('switzerland.html', MAP_ID=WORLD_ID_SWISS)
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
