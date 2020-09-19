@@ -1,15 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, request
 from string import Template
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/world')
 def homepage():
-    return """
-    <h1>Corona Scare Level Map</h1>
+    return render_template('index.html')
 
-    <iframe title="Corona Scare Map" aria-label="Map" id="datawrapper-chart-7nMGn" src="https://datawrapper.dwcdn.net/7nMGn/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="undefined"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
-    </script>
-    """
+@app.route('/upload', methods = ['GET', 'POST'])
+def upload_csv():
+    if request.method == 'POST':
+      f = request.files['file']
+      #f.save(secure_filename(f.filename))
+      return 'file uploaded successfully'
 
 
 if __name__ == '__main__':
