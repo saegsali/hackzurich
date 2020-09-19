@@ -6,13 +6,15 @@ from map import update_map
 
 WORLD_ID = 'XOmfL'
 
-
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+    return redirect(url_for('world'))
+
 @app.route('/world')
-def homepage():
-    return render_template('index.html', MAP_ID=WORLD_ID)
+def world():
+    return render_template('world.html', MAP_ID=WORLD_ID)
 
 @app.route('/switzerland')
 def switzerland():
@@ -25,8 +27,7 @@ def upload_csv():
         #file = request.files['file']
         process_data(uploaded_files) 
         update_map(WORLD_ID)
-        return redirect(url_for('homepage'))
-
+        return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
