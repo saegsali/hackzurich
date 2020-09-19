@@ -20,14 +20,14 @@
             </label>
          </div>
 
-        <iframe title="Corona Scare Map" aria-label="Map" id="datawrapper-chart-7nMGn" src="https://datawrapper.dwcdn.net/7nMGn/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="undefined"></iframe>
+        <iframe title="Corona Scare Map" aria-label="Map" id="datawrapper-chart-7nMGn" src="https://datawrapper.dwcdn.net/{{MAP_ID}}/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="undefined"></iframe>
         <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();</script>
         
         <h2>Upload Data</h2>
-        <form action = "http://localhost:5000/upload" method = "POST" 
+        <form action = "{{ url_for('upload_csv') }}" method = "POST" 
             enctype = "multipart/form-data">
-            <input type = "file" name = "file" />
-         <input type = "submit"/>
+            <input type = "file" name = "file"  multiple=""/>
+            <input type = "submit"/>
         </form>
     </body>
 </html>
