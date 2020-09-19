@@ -7,8 +7,12 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/world')
-def homepage():
+def world():
     return render_template('index.html')
+
+@app.route('/switzerland')
+def switzerland():
+    return render_template('switzerland.html')
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
