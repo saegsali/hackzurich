@@ -1,4 +1,4 @@
-Country,Alpha-3,Count,Count per Capita,Normalized Count
+Country,code,Count,Count per Capita,value
 Afghanistan,AFG,636,0.0,0.3
 Albania,ALB,237,0.0,1.0
 Algeria,DZA,177,0.0,0.1
