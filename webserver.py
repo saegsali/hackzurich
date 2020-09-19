@@ -4,7 +4,7 @@ import pandas as pd
 from twitter import process_data
 from map import update_map
 
-WORLD_ID = 'XOmfL'
+WORLD_ID = 'X3Ps8'
 
 app = Flask(__name__)
 

@@ -2,7 +2,7 @@ from datawrapper import Datawrapper
 import pandas as pd
 import requests
 
-DW_TOKEN = "lHl9w5VaMTL7dkSwCX3IYlUX4weMkOcLBSlzhnChgjnventUlRdOv2sATiHDxTsK"
+DW_TOKEN = "lozDiZ3apmLWCHpPT75YdA5rug7Q9XJxAO3KzV65QH4ELPDjStkMgsx3viR6dH8z"
 dw = Datawrapper(access_token = DW_TOKEN)
 DATA_PATH = "twitter_parsed.csv"
 
@@ -58,7 +58,7 @@ def update_properties(ID):
 
 def create_new_map():
     df = pd.read_csv(DATA_PATH, sep=',')
-    new_chart_info = dw.create_chart(title = '', chart_type = 'd3-maps-choropleth', data = df)
+    new_chart_info = dw.create_chart(title = 'Corona Scare Map', chart_type = 'd3-maps-choropleth', data = df)
     print(new_chart_info)
 
     dw.update_description(
@@ -77,7 +77,6 @@ def update_map(ID, csv_file = "twitter_parsed.csv"):
     dw.add_data(ID, df)
     update_properties(ID)
     dw.publish_chart(ID)
-
 
 #dw.update_metadata(ID, properties)
 #dw.publish_chart(ID)
