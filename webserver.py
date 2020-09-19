@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 from string import Template
 import pandas as pd
-from twitter import process_data
+import twitter
+import smd
 from map_world import update_map
 from map_switzerland import update_map_swiss
 
 WORLD_ID = 'X3Ps8'
-WORLD_ID_SWISS = 'Tmt8o'
+SWISS_ID = 'Tmt8o'
 
 app = Flask(__name__)
 
@@ -20,16 +21,25 @@ def world():
 
 @app.route('/switzerland')
 def switzerland():
-    return render_template('switzerland.html', MAP_ID=WORLD_ID_SWISS)
+    return render_template('switzerland.html', MAP_ID=SWISS_ID)
 
-@app.route('/upload', methods = ['GET', 'POST'])
-def upload_csv():
+@app.route('/upload_world', methods = ['GET', 'POST'])
+def upload_csv_world():
     if request.method == 'POST':
         uploaded_files = request.files.getlist("file")
         #file = request.files['file']
-        process_data(uploaded_files) 
+        twitter.process_data(uploaded_files) 
         update_map(WORLD_ID)
-        return redirect(url_for('index'))
+        return redirect(url_for('world'))
+
+@app.route('/upload_ch', methods = ['GET', 'POST'])
+def upload_csv_ch():
+    if request.method == 'POST':
+        uploaded_files = request.files.getlist("file")
+        #file = request.files['file']
+        smd.process_data(uploaded_files) 
+        update_map_swiss(SWISS_ID)
+        return redirect(url_for('switzerland'))
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
