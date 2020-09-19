@@ -58,7 +58,7 @@ def update_properties(ID):
 
 def create_new_map():
     df = pd.read_csv(DATA_PATH, sep=',')
-    new_chart_info = dw.create_chart(title = 'Corona Scare Map', chart_type = 'd3-maps-choropleth', data = df)
+    new_chart_info = dw.create_chart(title = '', chart_type = 'd3-maps-choropleth', data = df)
     print(new_chart_info)
 
     dw.update_description(

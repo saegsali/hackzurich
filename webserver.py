@@ -18,7 +18,7 @@ def world():
 
 @app.route('/switzerland')
 def switzerland():
-    return render_template('switzerland.html')
+    return render_template('switzerland.html', MAP_ID=WORLD_ID)
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
