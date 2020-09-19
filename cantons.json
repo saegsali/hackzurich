@@ -3,6 +3,8 @@
     "Argovie" : ["AG"],
     "Argovia" : ["AG"],
     "Aarau" : ["AG"],
+    "Baden" : ["AG"],
+    "Oberwil-Lieli" : ["AG"],
 
     "Appenzell" : ["AI", "AR"],
     "Appenzello" : ["AI", "AR"],
@@ -15,5 +17,126 @@
     "Bern" : ["BE"],
     "Berne" : ["BE"],
     "Berna" : ["BE"],
-    "Thun" : ["BE"]
+    "Thun" : ["BE"],
+
+    "Fribourg" : ["FR"],
+    "Friburg" : ["FR"],
+    "Freiburg" : ["FR"],
+    "Murten" : ["FR"],
+
+    "Geneva" : ["GE"],
+    "Genève" : ["GE"],
+    "Genf" : ["GE"],
+    "Ginevra" : ["GE"],
+
+    "Glarus" : ["GL"],
+    "Glaris" : ["GL"],
+    "Glarona" : ["GL"],
+    "Glaruna" : ["GL"],
+
+    "Graubünden" : ["GR"],
+    "Grisons" : ["GR"],
+    "Grigioni" : ["GR"],
+    "Grischun" : ["GR"],
+    "Chur" : ["GR"],
+    "Davos" : ["GR"], 
+
+    "Jura" : ["JU"],
+    "Giura" : ["JU"],
+    "Delémont" : ["JU"],
+
+    "Lucerne" : ["LU"],
+    "Luzern" : ["LU"],
+    "Lucerna" : ["LU"],
+    "Emmen" : ["LU"],
+
+    "Neuchâtel" : ["NE"],
+    "Neuenburg" : ["NE"],
+
+    "Nidwalden" : ["NW"],
+    "Nidwald" : ["NW"],
+    "Nidvaldo" : ["NW"],
+    "Stans" : ["NW"],
+
+    "Obwalden" : ["OW"],
+    "Obwald" : ["OW"],
+    "Obvaldo" : ["OW"],
+    "Sarnen" : ["OW"],
+
+    "Schaffhausen" : ["SH"],
+    "Schaffhouse" : ["SH"],
+    "Sciaffusa" : ["SH"],
+
+    "Schwyz" : ["SZ"],
+    "Schwytz" : ["SZ"],
+    "Svitto" : ["SZ"],
+    "Sviz" : ["SZ"],
+
+    "Solothurn" : ["SO"],
+    "Soleure" : ["SO"],
+    "Soletta" : ["SO"],
+    "Olten" : ["SO"],
+
+    "St. Gallen" : ["SG"],
+    "St Gall" : ["SG"],
+    "Saint-Gall" : ["SG"],
+    "San Gallo" : ["SG"],
+
+    "Thurgau" : ["TG"],
+    "Thurgovia" : ["TG"],
+    "Thurgovie" : ["TG"],
+    "Turgovia" : ["TG"],
+    "Frauenfeld" : ["TG"],
+
+    "Ticino" : ["TI"],
+    "Tessin" : ["TI"],
+    "Lugano" : ["TI"],
+    "Locarno" : ["TI"],
+    "Bellinzona" : ["TI"],
+    "Mendrisio" : ["TI"],
+
+    "Uri" : ["UR"],
+    "Altdorf" : ["UR"],
+
+    "Valais" : ["VS"],
+    "Vallais" : ["VS"],
+    "Wallis" : ["VS"],
+    "Vallese" : ["VS"],
+    "Brig" : ["VS"],
+    "Visp" : ["VS"],
+    "Sion" : ["VS"],
+    "Sitten" : ["VS"],
+
+    "Vaud" : ["VD"],
+    "Waadt" : ["VD"],
+    "Vad" : ["VD"],
+    "Lausanne" : ["VD"],
+    "Montreux" : ["VD"],
+
+    "Zug" : ["ZG"],
+    "Zoug" : ["ZG"],
+    "Zugo" : ["ZG"],
+
+    "Zürich" : ["ZH"],
+    "Zurich" : ["ZH"],
+    "Zurigo" : ["ZH"],
+    "Turitg" : ["ZH"],
+    "Winterthur" : ["ZH"],
+    "Uster" : ["ZH"],
+    "Wiesendangen" : ["ZH"],
+
+    "Corona" : ["Corona"],
+    "BAG" : ["Corona"],
+    "Daniel Koch" : ["Corona"],
+    "infection" : ["Corona"],
+    "Infektion" : ["Corona"],
+    "Ansteckungen" : ["Corona"],
+    "COVID-19" : ["Corona"],
+    "Coronavirus" : ["Corona"],
+    "Robert Koch" : ["Corona"],
+    "cases" : ["Corona"],
+    "coronavirus" : ["Corona"],
+    "corona" : ["Corona"],
+    "Quarantäne" : ["Corona"],
+    "Isolation" : ["Corona"]
 }
