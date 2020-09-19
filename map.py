@@ -1,6 +1,5 @@
 from datawrapper import Datawrapper
 import pandas as pd
-import requests
 
 DW_TOKEN = "lHl9w5VaMTL7dkSwCX3IYlUX4weMkOcLBSlzhnChgjnventUlRdOv2sATiHDxTsK"
 dw = Datawrapper(access_token = DW_TOKEN)
