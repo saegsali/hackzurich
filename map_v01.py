@@ -3,8 +3,8 @@ import pandas as pd
 
 dw = Datawrapper(access_token = "lHl9w5VaMTL7dkSwCX3IYlUX4weMkOcLBSlzhnChgjnventUlRdOv2sATiHDxTsK")
 
-df = pd.read_csv("test.csv", sep=',')
-new_chart_info = dw.create_chart(title = 'New chart 2!', chart_type = 'd3-maps-choropleth', data = df)
+df = pd.read_csv("test2.csv", sep=',')
+new_chart_info = dw.create_chart(title = 'New world chart 3!', chart_type = 'd3-maps-choropleth', data = df)
 print(new_chart_info)
 
 dw.update_description(
@@ -17,11 +17,11 @@ dw.update_description(
 properties = {
       "axes": {
           "keys": "code",
-          "values": "literacy-rate"
+          "values": "value"
       },
       "visualize": {
-          "basemap": "africa",
-          "map-key-attr": "ADM0_A3"
+          "basemap": "world-2019",
+          "map-key-attr": "DW_STATE_CODE"
       }
     }
 dw.update_metadata(new_chart_info['id'], properties)
