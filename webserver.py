@@ -13,8 +13,9 @@ def homepage():
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
     if request.method == 'POST':
-        file = request.files['file']
-        process_data(file)        
+        uploaded_files = request.files.getlist("file")
+        #file = request.files['file']
+        process_data(uploaded_files)        
         return redirect(url_for('homepage'))
 
 
