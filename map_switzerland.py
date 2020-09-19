@@ -5,7 +5,7 @@ import requests
 DW_TOKEN = "lozDiZ3apmLWCHpPT75YdA5rug7Q9XJxAO3KzV65QH4ELPDjStkMgsx3viR6dH8z"
 dw = Datawrapper(access_token = DW_TOKEN)
 
-DATA_PATH = "testdata_switzerland.csv"
+DATA_PATH = "smd_data.csv"
 
 def update_properties_swiss(ID):
     dw.update_description(
@@ -17,18 +17,19 @@ def update_properties_swiss(ID):
     properties = {
       "axes": {
           "keys": "Postal",
-          "values": "Population"
+          "values": "Ratio"
       },
       "visualize": {
           "basemap": "switzerland-cantons",
           "map-key-attr": "postal",
           "tooltip": { 
-                "body": "scare level: {{ Population }}", 
+                "body": "scare level: {{ Ratio }}", 
                   "title": "{{ Postal }}", 
                   "fields": { 
                         "Postal": "Postal", 
-                        "Canton": "Canton", 
-                        "Population": "Population" 
+                        "Corona": "Corona",
+                        "Related": "Related", 
+                        "Ratio": "Ratio" 
                     } 
             },
         "gradient": {
@@ -76,3 +77,5 @@ def update_map_swiss(ID, csv_file = DATA_PATH):
     dw.add_data(ID, df)
     update_properties_swiss(ID)
     dw.publish_chart(ID)
+
+#update_map_swiss("Tmt8o", csv_file = DATA_PATH)
