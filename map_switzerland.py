@@ -53,7 +53,7 @@ def update_properties_swiss(ID):
       "zoomable": True
       }
     }
-    #dw.update_metadata(ID, properties)
+    dw.update_metadata(ID, properties)
 
 
 
@@ -78,4 +78,4 @@ def update_map_swiss(ID, csv_file = DATA_PATH):
     update_properties_swiss(ID)
     dw.publish_chart(ID)
 
-update_map_swiss("Tmt8o", csv_file = DATA_PATH)
+#update_map_swiss("Tmt8o", csv_file = DATA_PATH)
