@@ -1,11 +1,10 @@
 from datawrapper import Datawrapper
 import pandas as pd
-import requests
 
 DW_TOKEN = "lozDiZ3apmLWCHpPT75YdA5rug7Q9XJxAO3KzV65QH4ELPDjStkMgsx3viR6dH8z"
 dw = Datawrapper(access_token = DW_TOKEN)
 
-DATA_PATH = "smd_data.csv"
+DATA_PATH = "data/smd_data.csv"
 
 def update_properties_swiss(ID):
     dw.update_description(

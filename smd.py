@@ -5,7 +5,7 @@ import os
 
 df = pd.DataFrame()
 
-with open('keywords.json') as json_file:
+with open('data/keywords.json') as json_file:
     CANTONS_DICT = json.load(json_file)
     WORD_LIST = CANTONS_DICT.keys()
     WORD_SET = set(WORD_LIST)
@@ -31,7 +31,7 @@ def count(row):
 def process_data(filenames):
     global df
     # Initialize necessary dataframes
-    ch_data = pd.read_csv("switzerland_data.csv")
+    ch_data = pd.read_csv("data/switzerland_data.csv")
     codes = ch_data["Postal"].values
 
     news_data = pd.DataFrame(index=codes)
@@ -63,7 +63,7 @@ def process_data(filenames):
             news_data = news_data.apply(count, axis=1)
 
     news_data["Ratio"] = news_data["Corona Related"] / news_data["Total"] * 100
-    news_data.to_csv("smd_data.csv", index=True)
+    news_data.to_csv("data/smd_data.csv", index=True)
 
 
 

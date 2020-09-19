@@ -3,7 +3,7 @@ import pandas as pd
 
 DW_TOKEN = "lozDiZ3apmLWCHpPT75YdA5rug7Q9XJxAO3KzV65QH4ELPDjStkMgsx3viR6dH8z"
 dw = Datawrapper(access_token = DW_TOKEN)
-DATA_PATH = "twitter_parsed.csv"
+DATA_PATH = "data/twitter_parsed.csv"
 
 def update_properties(ID):
     dw.update_description(
@@ -71,12 +71,9 @@ def create_new_map():
     dw.publish_chart(chart_id = new_chart_info['id'])
 
 
-def update_map(ID, csv_file = "twitter_parsed.csv"):
-    print("test hereee")
+def update_map(ID, csv_file = "data/twitter_parsed.csv"):
     df = pd.read_csv(csv_file, sep=',')
     dw.add_data(ID, df)
     update_properties(ID)
     dw.publish_chart(ID)
 
-#dw.update_metadata(ID, properties)
-#dw.publish_chart(ID)

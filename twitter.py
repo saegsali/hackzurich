@@ -6,16 +6,12 @@ import reverse_geocode as rg
 
 dw_keys = ["AFG", "ALB", "DZA", "SDN", "AND", "AGO", "ATG", "ARG", "ARM", "AUS", "AUT", "AZE", "BHS", "BHR", "BGD", "BRB", "BLR", "BEL", "BLZ", "BEN", "BTN", "BOL", "BIH", "BWA", "BRA", "BRN", "BGR", "BFA", "BDI", "KHM", "CMR", "CAN", "CPV", "CAF", "TCD", "CHL", "COL", "COM", "COG", "CRI", "HRV", "CUB", "CYP", "CZE", "CIV", "PRK", "COD", "DNK", "DJI", "DMA", "DOM", "ECU", "SSD", "SLV", "GNQ", "ERI", "EST", "ETH", "FJI", "FIN", "FRA", "GAB", "GMB", "PSE", "GEO", "DEU", "GHA", "GRC", "GRL", "GRD", "GTM", "GNB", "GIN", "GUY", "HTI", "HND", "HUN", "ISL", "IND", "IDN", "IRN", "IRQ", "IRL", "ISR", "ITA", "JAM", "JPN", "JOR", "KAZ", "KEN", "KIR", "KWT", "KGZ", "LAO", "LVA", "LBN", "LSO", "LBR", "LBY", "LIE", "LTU", "LUX", "MAC", "MDG", "PRT", "MWI", "MYS", "MDV", "MLI", "MLT", "MHL", "MRT", "MUS", "MEX", "FSM", "MDA", "MCO", "MNG", "MAR", "MOZ", "MMR", "NAM", "NRU", "NPL", "NLD", "NZL", "NIC", "NER", "NGA", "NOR", "OMN", "PAK", "PLW", "PAN", "PNG", "PRY", "PER", "PHL", "POL", "USA", "QAT", "KOR", "ROU", "RUS", "RWA", "KNA", "LCA", "VCT", "WSM", "SMR", "STP", "SAU", "SEN", "SYC", "SLE", "SGP", "SVK", "SVN", "SLB", "SOM", "ZAF", "ESP", "LKA", "SUR", "SWZ", "SWE", "CHE", "SYR", "TJK", "THA", "MKD", "TLS", "TGO", "TON", "TTO", "TUN", "TUR", "TKM", "TUV", "UGA", "UKR", "ARE", "GBR", "TZA", "URY", "UZB", "VUT", "VEN", "VNM", "YEM", "ZMB", "ZWE", "MNE", "SRB", "HKG", "EGY", "KSV", "CHN", "TWN", "ESH" ]
 
-filenames = ["/Users/Nico/Desktop/hackzurich_data/Twitter/crowdbreaks_tweets_jan_jun_2020_has_geo_coordinates.csv",
-"/Users/Nico/Desktop/hackzurich_data/Twitter/crowdbreaks_tweets_jan_jun_2020_has_place.csv"]
-
-
 def parse_countries():
     country_names =  []
     alpha2_codes = []
     alpha3_codes = []
     population = []
-    with open('countries.json') as json_file:
+    with open('data/countries.json') as json_file:
         data = json.load(json_file)
         for c in data:
             country_names.append(c["name"])
@@ -32,10 +28,6 @@ def reverse_geocode(df, geolocator, lat_field, lon_field):
 
 def process_chunk(df, chunk):
     # Analyze chunk and count country occurences 
-    # geolocator = geopy.Nominatim(user_agent='hackzurich')
-    # codes = chunk.apply(reverse_geocode, axis=1, geolocator=geolocator, lat_field='latitude', lon_field='longitude')
-    # chunk["country_code"] = codes
-    
     # Convert lat and long columns to a tuple of tuples
     try:
         coords = tuple(zip(chunk['latitude'], chunk['longitude']))
@@ -93,4 +85,4 @@ def process_data(filenames):
 
     # Save dataframe to csv file for datawrapper
     header = ["Country", "Alpha-3", "Count", "Count per Capita", "Normalized Count"]
-    df.to_csv("twitter_parsed.csv", columns=header, index=False)
+    df.to_csv("data/twitter_parsed.csv", columns=header, index=False)
