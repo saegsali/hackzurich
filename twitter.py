@@ -84,6 +84,9 @@ if __name__ == "__main__":
     df["Normalized Count"] = df_temp
     df["Normalized Count"] = df["Normalized Count"] * 100
 
+    # Round numbers to one decimal
+    df = df.round(1)
+
     # Save dataframe to csv file for datawrapper
     header = ["Country", "Alpha-3", "Count", "Count per Capita", "Normalized Count"]
     df.to_csv("twitter_parsed.csv", columns=header, index=False)
