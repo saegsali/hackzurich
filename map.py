@@ -18,18 +18,18 @@ dw.update_description(
 properties = {
       "axes": {
           "keys": "code",
-          "values": "value"
+          "values": "Normalized_Count"
       },
       "visualize": {
           "basemap": "world-2019",
           "map-key-attr": "DW_STATE_CODE",
           "tooltip": { 
-                "body": "scare level: {{ value }}", 
-                  "title": "{{ country }}", 
+                "body": "scare level: {{ Normalized_Count }}", 
+                  "title": "{{ Country }}", 
                   "fields": { 
                         "code": "code", 
-                        "country": "country", 
-                        "value": "value" 
+                        "Country": "Country", 
+                        "Normalized_Count": "Normalized_Count" 
                     } 
             } 
 
