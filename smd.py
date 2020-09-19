@@ -31,11 +31,12 @@ ch_data = pd.read_csv("switzerland_data.csv")
 codes = ch_data["Postal"].values
 
 news_data = pd.DataFrame(index=codes)
+news_data.index.name = 'Postal'
 news_data["Corona Related"] = 0
 news_data["Total"] = 0
 
 # Loop through files in SMD folder
-directory = "/Users/joelasper/Documents/data_hackzurich/hackzurich/SMD/data_export"
+directory = "/Users/Nico/Desktop/hackzurich_data/SMD/data_export"
 for filename in os.listdir(directory):
     print(filename)
     if filename.endswith(".csv"): 
@@ -57,7 +58,6 @@ for filename in os.listdir(directory):
         news_data = news_data.apply(count, axis=1)
 
 news_data["Ratio"] = news_data["Corona Related"] / news_data["Total"] * 100
-print(news_data)
 news_data.to_csv("smd_data.csv", index=True)
 
 

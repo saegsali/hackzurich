@@ -78,9 +78,16 @@
     "Olten" : ["SO"],
 
     "St. Gallen" : ["SG"],
+    "St." : ["SG"],
+    "Gallen" : ["SG"],
     "St Gall" : ["SG"],
+    "Gall" : ["SG"],
     "Saint-Gall" : ["SG"],
     "San Gallo" : ["SG"],
+    "Gallo" : ["SG"],
+    "Rapperswil-Jona" :["SG"],
+    "Wil" : ["SG"],
+
 
     "Thurgau" : ["TG"],
     "Thurgovia" : ["TG"],
