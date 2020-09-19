@@ -1,2 +1,2 @@
 # hackzurich
-#12 - Corona Scare Application
+#12 CORONA SCARE APPLICATION
