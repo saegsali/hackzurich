@@ -35,9 +35,9 @@ def update_properties_swiss(ID):
         "gradient": {
         "stops": [
           {"p": 0, "v": 0},
-          {"p": 0.25,"v": 0.21175258672962177},
-          {"p": 0.5,"v": 1.0358334534177065},
-          {"p": 0.75,"v": 4.514756946019832},
+          {"p": 0.25,"v": 20},
+          {"p": 0.5,"v": 30},
+          {"p": 0.75,"v": 40},
           {"p": 1,"v": 100}
           ],
         "colors": [
@@ -53,7 +53,7 @@ def update_properties_swiss(ID):
       "zoomable": True
       }
     }
-    dw.update_metadata(ID, properties)
+    #dw.update_metadata(ID, properties)
 
 
 
@@ -78,4 +78,4 @@ def update_map_swiss(ID, csv_file = DATA_PATH):
     update_properties_swiss(ID)
     dw.publish_chart(ID)
 
-#update_map_swiss("Tmt8o", csv_file = DATA_PATH)
+update_map_swiss("Tmt8o", csv_file = DATA_PATH)
