@@ -4,31 +4,31 @@ import requests
 
 DW_TOKEN = "lozDiZ3apmLWCHpPT75YdA5rug7Q9XJxAO3KzV65QH4ELPDjStkMgsx3viR6dH8z"
 dw = Datawrapper(access_token = DW_TOKEN)
-DATA_PATH = "twitter_parsed.csv"
 
-def update_properties(ID):
+DATA_PATH = "testdata_switzerland.csv"
+
+def update_properties_swiss(ID):
     dw.update_description(
         chart_id = ID,
-        source_name = 'Crowdbreaks',
-        source_url = 'https://www.crowdbreaks.org/',
+        source_name = 'SMD',
         byline = '',
     )
 
     properties = {
       "axes": {
-          "keys": "Alpha-3",
-          "values": "Normalized Count"
+          "keys": "Postal",
+          "values": "Population"
       },
       "visualize": {
-          "basemap": "world-2019",
-          "map-key-attr": "DW_STATE_CODE",
+          "basemap": "switzerland-cantons",
+          "map-key-attr": "postal",
           "tooltip": { 
-                "body": "scare level: {{ Normalized_Count }}", 
-                  "title": "{{ Country }}", 
+                "body": "scare level: {{ Population }}", 
+                  "title": "{{ Postal }}", 
                   "fields": { 
-                        "ISO Code": "Alpha-3", 
-                        "Country": "Country", 
-                        "Normalized_Count": "Normalized Count" 
+                        "Postal": "Postal", 
+                        "Canton": "Canton", 
+                        "Population": "Population" 
                     } 
             },
         "gradient": {
@@ -56,27 +56,23 @@ def update_properties(ID):
 
 
 
-def create_new_map():
+def create_new_map_swiss():
     df = pd.read_csv(DATA_PATH, sep=',')
     new_chart_info = dw.create_chart(title = 'Corona Scare Map', chart_type = 'd3-maps-choropleth', data = df)
     print(new_chart_info)
 
     dw.update_description(
         chart_id = new_chart_info['id'],
-        source_name = 'Crowdbreaks',
-        source_url = 'https://www.crowdbreaks.org/',
+        source_name = 'SMD',
         byline = '',
     )
 
-    update_properties(new_chart_info["id"])
+    update_properties_swiss(new_chart_info["id"])
     dw.publish_chart(chart_id = new_chart_info['id'])
 
 
-def update_map(ID, csv_file = "twitter_parsed.csv"):
+def update_map_swiss(ID, csv_file = DATA_PATH):
     df = pd.read_csv(csv_file, sep=',')
     dw.add_data(ID, df)
-    update_properties(ID)
+    update_properties_swiss(ID)
     dw.publish_chart(ID)
-
-#dw.update_metadata(ID, properties)
-#dw.publish_chart(ID)
