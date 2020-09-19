@@ -40,12 +40,12 @@ def update_properties(ID):
           {"p": 1,"v": 100}
           ],
         "colors": [
-          {"c": "#feebe2","p": 0},
-          {"c": "#fcc5c0","p": 0.2},
-          {"c": "#fa9fb5","p": 0.4},
-          {"c": "#f768a1","p": 0.6},
-          {"c": "#c51b8a","p": 0.8},
-          {"c": "#7a0177","p": 1}
+          {"c": "#ffdfdf","p": 0},
+          {"c": "#ffbfc0","p": 0.2},
+          {"c": "#ee7070","p": 0.4},
+          {"c": "#c80200","p": 0.6},
+          {"c": "#900000","p": 0.8},
+          {"c": "#510000","p": 1}
         ],
         "domain": [0,0.2,0.4,0.6,0.8,1]
       },
@@ -73,6 +73,7 @@ def create_new_map():
 
 
 def update_map(ID, csv_file = "twitter_parsed.csv"):
+    print("test hereee")
     df = pd.read_csv(csv_file, sep=',')
     dw.add_data(ID, df)
     update_properties(ID)
