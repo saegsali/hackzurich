@@ -1,5 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from string import Template
+import pandas as pd
+from twitter import process_data
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,9 +13,9 @@ def homepage():
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
     if request.method == 'POST':
-      f = request.files['file']
-      #f.save(secure_filename(f.filename))
-      return 'file uploaded successfully'
+        file = request.files['file']
+        process_data(file)        
+        return redirect(url_for('homepage'))
 
 
 if __name__ == '__main__':

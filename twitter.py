@@ -50,7 +50,7 @@ def process_chunk(df, chunk):
     for (code, count) in counts.iteritems():
         df.loc[df['Alpha-2'] == code, "Count"] += int(count)
 
-if __name__ == "__main__":
+def process_data(filenames):
     country_names, alpha2, alpha3, population = parse_countries()
     
     # Create DataFrame that counts number of tweets per country
@@ -60,9 +60,9 @@ if __name__ == "__main__":
     df['Alpha-3'] = df['Alpha-3'].astype('category')
 
     chunksize = 10 ** 6
-    for filename in filenames:
-        for chunk in pd.read_csv(filename, chunksize=chunksize):
-            process_chunk(df, chunk)
+    #for filename in filenames:
+    for chunk in pd.read_csv(filenames, chunksize=chunksize):
+        process_chunk(df, chunk)
 
 
     # Process data
@@ -89,4 +89,4 @@ if __name__ == "__main__":
 
     # Save dataframe to csv file for datawrapper
     header = ["Country", "Alpha-3", "Count", "Count per Capita", "Normalized Count"]
-    df.to_csv("twitter_parsed.csv", columns=header, index=False)
+    df.to_csv("twitter_parsed2.csv", columns=header, index=False)
