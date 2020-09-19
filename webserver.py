@@ -14,6 +14,10 @@ app = Flask(__name__)
 def homepage():
     return render_template('index.html', MAP_ID=WORLD_ID)
 
+@app.route('/switzerland')
+def switzerland():
+    return render_template('switzerland.html')
+
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_csv():
     if request.method == 'POST':
