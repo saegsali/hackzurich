@@ -25,6 +25,8 @@
         <div class="upload-group" style="text-align: center;">
             <div style="display: inline-block; text-align: left;">
             <h2>Upload Data</h2>
+            <p>Please select one or several .csv files containing news articles data. <br>
+                Upload and processing might take several minutes depending on file size.</p>
             <form action = "{{ url_for('upload_csv_ch') }}" method = "POST" 
                 enctype = "multipart/form-data">
                 <input type = "file" name = "file"  multiple=""/>

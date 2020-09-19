@@ -37,7 +37,11 @@ def process_chunk(df, chunk):
     # chunk["country_code"] = codes
     
     # Convert lat and long columns to a tuple of tuples
-    coords = tuple(zip(chunk['latitude'], chunk['longitude']))
+    try:
+        coords = tuple(zip(chunk['latitude'], chunk['longitude']))
+    except:
+        coords = tuple(zip(chunk['estimated_latitude'], chunk['estimated_longitude']))
+
 
     results_rg = rg.search(coords)
     codes = [x.get('country_code') for x in results_rg]
