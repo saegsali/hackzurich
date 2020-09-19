@@ -60,9 +60,9 @@ def process_data(filenames):
     df['Alpha-3'] = df['Alpha-3'].astype('category')
 
     chunksize = 10 ** 6
-    #for filename in filenames:
-    for chunk in pd.read_csv(filenames, chunksize=chunksize):
-        process_chunk(df, chunk)
+    for filename in filenames:
+        for chunk in pd.read_csv(filename, chunksize=chunksize):
+            process_chunk(df, chunk)
 
 
     # Process data
@@ -89,4 +89,4 @@ def process_data(filenames):
 
     # Save dataframe to csv file for datawrapper
     header = ["Country", "Alpha-3", "Count", "Count per Capita", "Normalized Count"]
-    df.to_csv("twitter_parsed2.csv", columns=header, index=False)
+    df.to_csv("twitter_parsed.csv", columns=header, index=False)
