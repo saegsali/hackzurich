@@ -22,6 +22,10 @@ body {
   color: #444;
   background-color: #ffffff;
 }
+
+.subtitle {
+  text-align: center;
+}
 /*
  * Formatting the header area
  */
